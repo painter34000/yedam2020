@@ -5,14 +5,39 @@ public class HelloWorld {
 		int year = 2020;
 		System.out.println("Hello, welcome to the java world!");
 		System.out.println("Hello World");
-		System.out.println("¿ÃÇØ´Â" + year);
-		System.out.println("³ªÀÌ´Â" + age);
+		System.out.println("ì¶œìƒë…„ë„" + year);
+		System.out.println("ë‚˜ì´" + age);
 		System.out.println(age + year);
-		System.out.println("³»³ªÀÌ´Â"+ age +"ÀÔ´Ï´Ù");
+		System.out.println("ì¶œìƒë…„ë„"+ age +"ìƒì¼");
+	
+		int height = 1700;
+		int weight = 65;
+		
+		year = 2021;
+		
+		int firstDayOfYear = 1;
+		int firstdayOfYear = 1;
+		
+		int num1, num2, num3;
+		num1 = 40;
+		num2 = 60;
+		num3 = 70;
+		int summary = num1 + num2 + num3;
+		System.out.println("summaryì˜ ê°’ì€ :" + summary);
+		
+		
+		long sum = 0;
+		int firstValue = 200000000;
+		int secondValue = 100000000;
+		sum = (long)firstValue + secondValue;
+		System.out.println("ë‘ ìˆ˜ì˜ í•©ì€ : " + sum);
+		
+		
+		
+		
+	
+		
+		
+		
 	}
 }
-// ¿©±â´Â ½ÇÇàÀÌ ¾ÈµË´Ï´Ù. Hello World¸¦ Ãâ·ÂÇÏ´Â ±¸¹®
-
-/*
- * ÀÌ ¾ÈÀÇ ³»¿ëÀº ¸ğµç°ÍÀÌ ÁÖ¼®Ã³¸®°¡ µË´Ï´Ù. ÀÛ¼ºÀÚ : 2020 È«¼º¿ì ¿©·¯ÁÙÀ» ÁÖ¼®À» ´Ş¶§ »ç¿ë
- */
