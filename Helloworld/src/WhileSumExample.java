@@ -47,12 +47,30 @@ public class WhileSumExample {
 //3의 배우시면서 7의 배수 출력. 100 미만
 //for    while 문으로 출력
 
-	public static void main(String[] args) {
-		int i = 0;
-		while (i <= 100) {
-			if (i % 3 == 0 && i % 7 == 0)
-			System.out.println("3의 배수이면서 7의 배루. 100 미만" + i);
-			i++;
-		}
-	}
-}
+//	public static void main(String[] args) {
+//		int i = 0;
+//		while (i <= 100) {
+//			if (i % 3 == 0 && i % 7 == 0)
+//			System.out.println("3의 배수이면서 7의 배루. 100 미만" + i);
+//			i++;
+//		}
+//	}
+//	
+
+//	public static void main(String[] args) {
+//		int i = 1;
+//		while (i <= 9) {
+//			int j = 1;
+//
+//			while (j <= 9) {
+//				System.out.print(j + "*" + i + "=" + (i * j) + "    ");
+//				j++;
+//			}
+//			if (j == 10) {
+//				System.out.println(j + "*" + i + "=" + (i * j) + "    ");
+//				i++;
+//			}
+//		}
+//	}
+//}
+
