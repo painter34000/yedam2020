@@ -3,8 +3,8 @@ package com.yedam.hsw.classes.interfaces.control;
 import java.util.Scanner;
 
 import com.yedam.hsw.classes.interfaces.model.Employee;
+import com.yedam.hsw.classes.interfaces.model.Employees;
 import com.yedam.hsw.classes.interfaces.impl.EmpServiceImpl;
-import com.yedam.hsw.classes.interfaces.impl.EmpServiceImpl2;
 import com.yedam.hsw.classes.interfaces.model.EmpService;
 import com.yedam.hsw.classes.interfaces.model.Employee;
 
@@ -19,9 +19,9 @@ public class EmpProc {
 		System.out.println("프로그램 시작");
 
 		while (true) {
-			System.out.println("==============================");
-			System.out.println("1.추가 2.조회 3.리스트 4.삭제 5.종료");
-			System.out.println("==============================");
+			System.out.println("=====================================");
+			System.out.println("1.추가 2.조회 3.리스트 4.삭제 5.종료6.디비조회7.입력");
+			System.out.println("=====================================");
 			System.out.println("선택");
 			int menu = scn.nextInt();
 			scn.nextLine();
@@ -38,7 +38,7 @@ public class EmpProc {
 				Employee emp = new Employee(name, empNo, salary);
 				service.addEmp(emp, employees);
 
-			//	service.addEmp(null, null);
+				// service.addEmp(null, null);
 
 			} else if (menu == 2) {
 				System.out.println("사원번호 입력:");
@@ -57,10 +57,27 @@ public class EmpProc {
 			} else if (menu == 5) {
 				break;
 
+			} else if (menu == 6) {
+				service.searchEmployees();
+				
+			}else if (menu == 7) {
+				System.out.println("last 입력");
+				String lastName=scn.nextLine()	;
+				System.out.println("이메일 입력");
+				String email=scn.nextLine();
+				System.out.println("업무 입력");
+				String jobId=scn.nextLine();
+				
+				Employees emp=new Employees();
+				emp.setLastName(lastName);
+				emp.setEmail(email);
+				emp.setJobId(jobId);
+				
+				service.insertEmployees(emp);
 			}
+			
 		}
 		System.out.println("프로그램 종료");
 
 	}
-
 }
