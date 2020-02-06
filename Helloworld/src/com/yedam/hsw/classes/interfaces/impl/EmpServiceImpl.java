@@ -1,5 +1,7 @@
 package com.yedam.hsw.classes.interfaces.impl;
 
+import java.util.List;
+
 import com.yedam.hsw.classes.interfaces.model.EmpService;
 import com.yedam.hsw.classes.interfaces.model.Employee;
 import com.yedam.hsw.classes.interfaces.model.Employees;
@@ -53,9 +55,9 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	public void insertEmployees(Employees emp) {
 		System.out.println("DB입력");
-		EmpDAO dao=new EmpDAO();
+		EmpDAO dao = new EmpDAO();
 		dao.insertEmployees(emp);
-		
+
 	}
 
 	@Override
@@ -63,11 +65,38 @@ public class EmpServiceImpl implements EmpService {
 		System.out.println("디비 조회");
 		EmpDAO dao = new EmpDAO();
 		Employees[] empArray = dao.getEmployees();
-		for (Employees emp: empArray) {
-			if(emp !=null) {
+		for (Employees emp : empArray) {
+			if (emp != null) {
 				System.out.println(emp);
 			}
 		}
+	}
+
+	@Override
+	public List<Employees> getDBEmployees() {
+		EmpDAO dao = new EmpDAO();
+		List<Employees> list = dao.getEmpList();
+		return list;
+	}
+
+	@Override
+	public Employees getDBEmployee(int empId) {
+		EmpDAO dao = new EmpDAO();
+
+		return dao.getEmployee(empId);
+	}
+
+	@Override
+	public void insertDBEmp(Employees emp) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void updateDBEmp(Employees emp) {
+		EmpDAO dao = new EmpDAO();
+		dao.updateEmployees(emp);
+
 	}
 
 }
