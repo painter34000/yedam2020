@@ -83,12 +83,21 @@ public class EmpDAO {
 	// 4. 디비 수정
 	public void updateEmployees(Employees emp) {
 		conn = DAO.getConnect();
-		String sql = "update emp_temp set salary = salary+?, email = ? where employee_id=?";
+		String sql = "update emp_temp " + "set firse_name=first_name";
+		if (emp.getSalary() != 0)
+			sql += ", salry=salry+?";
+		if (emp.getEmail() != null && !emp.getEmail().equals(""))
+			sql += ",emil=?";
+		sql = sql + "where employee_id=?";
+
 		try {
 			pstmt = conn.prepareStatement(sql);
-			pstmt.setInt(1, emp.getSalary());
-			pstmt.setString(2, emp.getEmail());
-			pstmt.setInt(3, emp.getEmployeeId());
+			int cnt = 0;
+			if (emp.getSalary() != 0)
+				pstmt.setInt(++cnt, emp.getSalary());
+			if (emp.getEmail() != null && !emp.getEmail().equals(""))
+				pstmt.setString(++cnt, emp.getEmail());
+			pstmt.setInt(++cnt, emp.getEmployeeId());
 			int r = pstmt.executeUpdate();
 			System.out.println(r + "건이 변경되었습니다");
 

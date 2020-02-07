@@ -83,9 +83,14 @@ public class EmpProc {
 			} else if (menu == 8) {
 				System.out.println("조회 사원번호입력");
 				int empId = scn.nextInt();
-				System.out.println("급여 인상분 입력");
-				int sal = scn.nextInt();
 				scn.nextLine();
+				System.out.println("급여 인상분 입력(인상분이 없으면 엔터키)");
+				String salNum = scn.nextLine();
+				int sal = 0;
+				if (salNum != null && !salNum.equals(""))
+					sal = Integer.parseInt(salNum); // parseInt->문자형 데이타를 정수형으로 바꿔주는 메소드? 클래식?
+//				int sal = scn.nextInt();
+//				scn.nextLine();
 				System.out.println("변경할 이메일");
 				String email = scn.nextLine();
 
